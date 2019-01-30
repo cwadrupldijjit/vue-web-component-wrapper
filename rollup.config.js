@@ -1,4 +1,4 @@
-const copy = require('rollup-plugin-copy')
+const copy = require('rollup-copy-plugin')
 
 export default {
   input: 'src/index.js',

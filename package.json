@@ -36,7 +36,7 @@
     "lint-staged": "^6.1.0",
     "puppeteer": "^1.0.0",
     "rollup": "^0.55.3",
-    "rollup-plugin-copy": "^0.2.3",
+    "rollup-copy-plugin": "^0.1.0",
     "typescript": "^3.2.2",
     "vue": "^2.5.13",
     "yorkie": "^1.0.3"
