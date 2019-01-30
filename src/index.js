@@ -89,6 +89,13 @@ export default function wrap (Vue, Component, options = {}) {
   class CustomElement extends HTMLElement {
     constructor () {
       const self = super()
+
+      self.props = Object.keys(camelizedPropsMap).reduce((p, propName) => {
+        const config = camelizedPropsMap[propName] || {}
+        p[propName] = config.default || undefined
+        return p
+      })
+
       if (useShadowDOM) self.attachShadow({ mode: 'open' })
 
       const wrapper = self._wrapper = new Vue({
@@ -97,7 +104,7 @@ export default function wrap (Vue, Component, options = {}) {
         shadowRoot: self.shadowRoot,
         data () {
           return {
-            props: {},
+            props: self.props,
             slotChildren: []
           }
         },
