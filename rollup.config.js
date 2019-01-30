@@ -1,3 +1,5 @@
+const copy = require('rollup-plugin-copy')
+
 export default {
   input: 'src/index.js',
   output: [
@@ -10,5 +12,10 @@ export default {
       name: 'wrapVueWebComponent',
       file: 'dist/vue-wc-wrapper.global.js'
     }
+  ],
+  plugins: [
+    copy({
+      'types/index.d.ts': 'dist/index.d.ts'
+    })
   ]
 }
