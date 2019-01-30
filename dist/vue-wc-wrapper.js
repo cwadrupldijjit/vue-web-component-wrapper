@@ -180,7 +180,7 @@ function wrap (Vue, Component, options = {}) {
         const config = camelizedPropsMap[propName] || {};
         p[propName] = config.default || undefined;
         return p
-      });
+      }, {});
 
       if (useShadowDOM) self.attachShadow({ mode: 'open' });
 
